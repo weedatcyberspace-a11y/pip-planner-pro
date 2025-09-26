@@ -79,14 +79,15 @@ export const EnrollmentForm = ({ course, onBack }: EnrollmentFormProps) => {
 
   const handleSubmit = () => {
     toast({
-      title: "Enrollment Submitted!",
-      description: `Your enrollment for ${course.title} has been processed. You will receive payment instructions via email.`,
+      title: "Redirecting to Payment!",
+      description: `Redirecting you to complete payment for ${course.title}...`,
     });
     
-    // Simulate redirect to payment
+    // Redirect to Pesapal store
     setTimeout(() => {
+      window.open('https://store.pesapal.com/usarichesportal', '_blank');
       onBack();
-    }, 2000);
+    }, 1500);
   };
 
   return (
